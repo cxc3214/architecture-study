@@ -22,5 +22,6 @@
 
 	<modules>
 		<module>lesson1-mvc</module>
+		<module>webserver</module>
 	</modules>
 </project>
