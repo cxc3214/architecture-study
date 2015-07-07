@@ -24,5 +24,6 @@
 		<module>lesson1-mvc</module>
 		<module>lesson2-webserver</module>
 		<module>lesson3-mvc2</module>
+		<module>lesson4-mongodb</module>
 	</modules>
 </project>
