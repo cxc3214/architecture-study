@@ -10,3 +10,40 @@
 | @Sorted  |	Class |	查询结果的排序描述  |
 
 具体实现和参数请看代码
+
+searchbean
+```
+@SearchBean
+@Paged
+@Sorted({"id desc"})
+public class ModelASearchBean extends Dto{
+	
+	@CondtionExpression
+	private String name;
+	@CondtionExpression(value="age",type=CondtionType.greaterthan)
+	private Integer ageFrom;
+	@CondtionExpression(value="age",type=CondtionType.lessthan)
+	private Integer ageTo;
+	
+}
+
+```
+
+client
+```
+public class Client {
+	@Autowired
+	JpaInterface japDao;
+	/**
+	 * 构造一个分页的查询 只需要这3行代码，是不是简单多了？
+	 * @param tmap controller传输过来的参数map
+	 * @return
+	 */
+	public Page<ModelA> getList(Map<String, Object> tmap) {
+		DefaultJpaQuery dq = new DefaultJpaQuery<ModelA>(ModelASearchBean.class, tmap);
+		Page<ModelA> returnList =  japDao.findAll(dq.buildSpecification(), dq.buildPageable());
+		return returnList;
+	}
+}
+
+```
