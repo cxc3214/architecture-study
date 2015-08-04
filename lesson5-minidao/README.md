@@ -12,7 +12,7 @@
 具体实现和参数请看代码
 
 searchbean
-```
+```java
 @SearchBean
 @Paged
 @Sorted({"id desc"})
@@ -30,7 +30,7 @@ public class ModelASearchBean extends Dto{
 ```
 
 client
-```
+```java
 public class Client {
 	@Autowired
 	JpaInterface japDao;
