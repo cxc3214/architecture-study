@@ -6,9 +6,9 @@
 		<artifactId>architecture-study</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>lesson1-mvc</artifactId>
+	<artifactId>lesson3-mvc2</artifactId>
 	<packaging>war</packaging>
-	<name>mvc</name>
+	<name>mvc2</name>
 	<description>mvc 简单框架</description>
 	<dependencies>
 		<dependency>
@@ -18,7 +18,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>mvc</finalName>
+		<finalName>mvc2</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
