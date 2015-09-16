@@ -26,5 +26,6 @@
 		<module>lesson3-mvc2</module>
 		<module>lesson4-mongodb</module>
 		<module>lesson5-minidao</module>
+		<module>lesson6-gencode</module>
 	</modules>
 </project>
