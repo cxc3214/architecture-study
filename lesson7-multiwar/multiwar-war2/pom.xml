@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.imspring.study</groupId>
+		<artifactId>lesson7-multiwar</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>multiwar-war2</artifactId>
+	<packaging>war</packaging>
+	<name>multiwar-war2</name>
+	<description>multiwar-war2 web2</description>
+	<properties>
+		<multiwar.version>0.0.1-SNAPSHOT</multiwar.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>net.imspring.study</groupId>
+			<artifactId>multiwar-war1</artifactId>
+			<type>war</type>
+			<version>${multiwar.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<version>3.0</version>
+					<!-- <packagingExcludes>WEB-INF/lib/*</packagingExcludes> -->
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<overlays>
+						<overlay>
+							<groupId>net.imspring.study</groupId>
+							<artifactId>multiwar-war1</artifactId>
+						</overlay>
+					</overlays>
+					<!-- 排除warlib包避免重复 -->
+					<!-- <dependentWarExcludes>WEB-INF/lib/*</dependentWarExcludes> -->
+				</configuration>
+			</plugin>
+			<!-- 使得 war具有依赖功能的插件 勿删 -->
+			<plugin>
+				<groupId>org.appfuse.plugins</groupId>
+				<artifactId>warpath-maven-plugin</artifactId>
+				<version>3.5.0</version>
+				<extensions>true</extensions>
+				<executions>
+					<execution>
+						<goals>
+							<goal>add-classes</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
