@@ -28,5 +28,7 @@
 		<module>lesson5-minidao</module>
 		<module>lesson6-gencode</module>
 		<module>lesson7-multiwar</module>
+		<module>lesson8-jeecg</module>
+		<module>lesson9-weixin</module>
 	</modules>
 </project>
